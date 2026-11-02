@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* 導覽列 */
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* 主要內容容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* 主頁 Banner */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* 卡片區域 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.875rem; }
+            .nav-container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">My Website</div>
+            <div class="nav-links">
+                <a href="#about">關於我</a>
+                <a href="#projects">專案</a>
+                <a href="#contact">聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主頁面內容 -->
+    <div class="container">
+        
+        <!-- Banner 區塊 -->
+        <section class="hero" id="about">
+            <h1>你好，歡迎來到我的獨立網站！</h1>
+            <p>這是一個兼具簡約設計與響應式排版的個人首頁。透過 HTML 與 CSS，輕鬆展現你的個人風格。</p>
+            <a href="https://github.com" class="btn" target="_blank">前往 GitHub 部署</a>
+        </section>
+
+        <!-- 特色/專案展示區 -->
+        <h2 id="projects">專案展示</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>專案 01</h3>
+                <p>簡單介紹你的第一個專案內容、使用技術或是成果目標。</p>
+            </div>
+            <div class="card">
+                <h3>專案 02</h3>
+                <p>簡單介紹你的第二個專案內容，卡片會自動隨螢幕大小適應排版。</p>
+            </div>
+            <div class="card">
+                <h3>專案 03</h3>
+                <p>支援手機、平板與電腦全平臺正常顯示（RWD 響應式設計）。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 頁尾 -->
+    <footer id="contact">
+        <p>© 2026 My Website. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
